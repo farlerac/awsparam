@@ -5,4 +5,9 @@
 # @example
 #   include awsparam
 class awsparam {
+
+  package { 'awscli':
+    ensure => present,
+  }
+
 }
