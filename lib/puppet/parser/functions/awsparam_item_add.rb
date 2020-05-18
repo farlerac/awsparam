@@ -3,7 +3,7 @@ require_relative 'awsparam_functions'
 # Adds a SecureString to  AWS Parameter Store
 #
 # Usage: awsparam_item_add(folder, name, content)
-# Example: $db_config = lastpass_item_add('oracle/db', 'appuser', 'content goes here')
+# Example: $db_config = awsparam_item_add('oracle/db', 'appuser', 'content goes here')
 Puppet::Parser::Functions.newfunction(:awsparam_item_add, :type => :rvalue) do |args|
   raise Puppet::ParseError, 'Usage: awsparam_item_add(folder, name, content)' unless args.size == 3
 

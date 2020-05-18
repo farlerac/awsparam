@@ -68,7 +68,7 @@ def get_item_by_uniquename(uniquename)
   raise Puppet::ParseError, "error: aws ssm get-parameter --name #{uniquename} --with-decryption --query \"Parameter.Value\": #{error}" \
     unless status.success?
 
-  show_result
+  show_result.strip.gsub(/\A"|"\Z/,'').gsub("\\n","\n")
 end
 
 def create_item(folder, name, content)
